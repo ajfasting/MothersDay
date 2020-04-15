@@ -1,0 +1,17 @@
+
+/*.carousel {
+    max-height: 680px;
+    max-width: 830px;
+}*/
+
+/*.carousel-inner > .item > img {
+    margin: 0 auto;
+}*/
+
+
+body {
+    background-color: lightblue;
+}
+.container-sm{
+    padding-top: 2px;
+}
