@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <!--bootswatch using cerulean theme https://bootswatch.com/cerulean/-->
     <a href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cerulean/bootstrap.min.css"></a>
+    <!-- animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <!--font awesome-->
     <script src="https://kit.fontawesome.com/5b5ed07330.js" crossorigin="anonymous"></script>
     <!--local-->
@@ -11,6 +13,21 @@
     <link rel="stylesheet" href="styles/styles.css">
 
     <title>Home</title>
+    <style>
+        h1 {
+            font-family: 'Londrina Shadow';
+            color:#2FA4E7;
+            font-size: 3.5em;
+        }
+
+        body {
+            font-family: 'Questrial';
+        }
+        h1.animated {
+            display: inline-block;
+        }
+        .ball { visibility: hidden; }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -39,31 +56,118 @@
         </ul>
     </div>
 </nav>
+
 <div class="jumbotron">
-    <h1 class="display-3">Happy Mother's Day!</h1>
-    <p class="lead">This will have a meaningful message once I think of one. There is possibility for a pic or graphic of some sort here as well.</p>
-    <hr class="my-4">
-    <p>I will put something here too. I may or may not use the button.</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
-</div>
-<h3>Something slightly smaller could go here as well if we want.</h3>
+    <!-- content -->
+    <div class="container">
+        <h1 class="animated" id="change">Happy Mother's Day!</h1><hr />
+        <form role="form">
+            <div class="row">
+                <div class="col-sm">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Select your favorite balloons</h5>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="red">
+                                <label class="form-check-label" data-color="#ff0000" for="red">Red balloons</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="green">
+                                <label class="form-check-label" data-color="#00b300" for="green">Green balloons</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="blue">
+                                <label class="form-check-label" data-color="#0000ff" for="blue">Blue balloons</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="purple">
+                                <label class="form-check-label" data-color="#b30086" for="purple">Purple balloons</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="silver">
+                                <label class="form-check-label" data-color="#d9d9d9" for="silver">Silver balloons</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="pink">
+                                <label class="form-check-label" data-color="#ff99aa" for="pink">Pink balloons</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="orange">
+                                <label class="form-check-label" data-color="#ff6600" for="orange">Orange balloons</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="blue-green">
+                                <label class="form-check-label" data-color="#33cccc" for="blue-green">Blue-green balloons</label>
+                            </div>
+                           <!-- <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="black">
+                                <label class="form-check-label" data-color="#333333" for="black">Black balloons</label>
+                            </div>-->
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="brown">
+                                <label class="form-check-label" data-color="#a52a2a" for="brown">Brown balloons</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="yellow">
+                                <label class="form-check-label" data-color="#ffff00" for="yellow">Yellow balloons</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-outline-primary mt-3" id="submit">Submit</button>
+                    <button type="button" class="btn btn-outline-primary mt-3" id="boxes">Check All Boxes</button>
+                    <button type="button" class="btn btn-outline-primary mt-3" id="noBoxes">Uncheck All Boxes</button>
+
+                </div>
+                <!-- toast -->
+                <div id="toast" class="toast">
+                    <div class="toast-header">
+                        <strong class="mr-auto" id="product">You forgot to pick balloons!</strong>
+                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="toast-body">
+                        <strong id="code">You need balloons for Mother's Day!</strong>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <img src="images/balloons/red.png" class="ball" alt="red balloon" id="redImg" />
+                    <img src="images/balloons/green.png" class="ball" alt="green balloon" id="greenImg" />
+                    <img src="images/balloons/blue.png" class="ball" alt="blue balloon" id="blueImg" />
+                    <img src="images/balloons/purple.png" class="ball" alt="purple balloon" id="purpleImg" />
+                    <img src="images/balloons/silver.png" class="ball" alt="silver balloon" id="silverImg" />
+                    <img src="images/balloons/orange.png" class="ball" alt="orange balloon" id="orangeImg" />
+                    <img src="images/balloons/blue_green.png" class="ball" alt="blue_green balloon" id="blue-greenImg" />
+                    <img src="images/balloons/pink.png" class="ball" alt="pink balloon" id="pinkImg" />
+                    <!--<img src="images/balloons/black.png" class="ball" alt="black balloon" id="blackImg" />-->
+                    <img src="images/balloons/brown.png" class="ball" alt="brown balloon" id="brownImg" />
+                    <img src="images/balloons/yellow.png" class="ball" alt="yellow balloon" id="yellowImg" />
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <h3>Something slightly smaller could go here as well if we want.</h3>
 <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
     <div class="card-header">Header</div>
     <div class="card-body">
         <h4 class="card-title">Success card title</h4>
         <p class="card-text">Maybe a card like this</p>
     </div>
-
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script><!-- popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <!--bootstrap-->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<!--JQuery-->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 <!--local-->
 <script src="javascript/js.js"></script>
 </body>
