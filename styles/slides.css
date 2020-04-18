@@ -90,3 +90,6 @@
     margin-right: auto;
     width: 50%;
 }
+.pagination {
+    float: right;
+}
