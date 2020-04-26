@@ -93,3 +93,6 @@
 .pagination {
     float: right;
 }
+img {
+    padding-right: 5px;
+}
